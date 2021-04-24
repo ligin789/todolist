@@ -8,7 +8,7 @@ $obj->delete_task=$delete_task;
 $return=$obj->delete();
 if($return)
 {
-    echo $return;
+    echo "Delete Succes";
 }
 else{
     echo "Delete Failed";

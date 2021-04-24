@@ -1,17 +1,17 @@
 <?php
-if(isset($_POST['delete_task']))
+if(isset($_POST['finishtask']))
 {
 include "./registerclass.php";
 $obj=new regClass();
-$delete_task=$_POST['delete_task'];
-$obj->delete_task=$delete_task;
-$return=$obj->delete();
+$finishtask=$_POST['finishtask'];
+$obj->finishtask=$finishtask;
+$return=$obj->complete();
 if($return)
 {
-    echo $return;
+    echo "Task marked as complete";
 }
 else{
-    echo "Delete Failed";
+    echo "Task completion failed";
 }
 }
 

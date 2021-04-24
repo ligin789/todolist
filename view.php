@@ -12,15 +12,14 @@ if(isset($_POST['fetchData']))
             if($viewData['task_status']==1)
             {
                 $count++;
-                echo "<li class='list-group-item success' aria-current='true'>".ucwords($viewData['task_content'])." 
-                <button class='btn btn-secondary m-2 pull-right'><i class='fa fa-pencil-square-o' aria-hidden='true'></i></button>
-                <button class='btn btn-danger m-2 float-right'><i class='fa fa-trash-o' aria-hidden='true'></i></button></li>";
+                echo "<li class='list-group-item active' aria-current='true'>".ucwords($viewData['task_content'])." 
+                <button class='btn btn-secondary m-2 pull-right'>Completed on ".$viewData['task_updated_at']."</button>
+               </li>";
             }
             else if($viewData['task_status']==0){
                 $count++;
                 echo "<li class='list-group-item' aria-current='true'>".ucwords($viewData['task_content'])."
                 <button class='btn btn-success m-2 pull-right' title='Finish task' onclick='finish(this)' value=".$viewData['task_id']."><i class='fa fa-check' aria-hidden='true'></i></button>
-                <button class='btn btn-secondary m-2 pull-right' value=".$viewData['task_content']."><i class='fa fa-pencil-square-o' aria-hidden='true'></i></button>
                 <button value=".$viewData['task_id']." onclick='deletetask(this)' class='btn btn-danger m-2 float-right'><i class='fa fa-trash-o' aria-hidden='true'></i></button></li>";
             }
         }

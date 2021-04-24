@@ -22,6 +22,13 @@ class regClass{
         $task_id=$this->delete_task;
         $deleteSql="UPDATE `tbl_tasks` SET task_status=2 WHERE task_id='$task_id'";
         $ret=$this->dbconnect->query($deleteSql);
-        return $deleteSql;
+        return $ret;
+    }
+    function complete()
+    {
+        $task_id=$this->finishtask;
+        $finishtasksql="UPDATE `tbl_tasks` SET task_status=1 WHERE task_id='$task_id'";
+        $ret=$this->dbconnect->query($finishtasksql);
+        return $ret;
     }
 }
