@@ -33,14 +33,12 @@
             </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
+
                         <li class="nav-item">
-                            <a class="nav-link h5" to="/" exact>Home</a>
+                            <a class="nav-link h5" id="Completed" exact>Completed task</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link h5" to="/work" exact>Work</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link h5" id="add">Add</a>
+                            <a class="nav-link h5" id="add">Add New Task</a>
                         </li>
                     </ul>
                 </div>
@@ -129,6 +127,25 @@
                     url: "deletetask.php",
                     data: {
                         delete_task: delete_task
+                    },
+                    success: function(response) {
+                        swal("Good job!", response, "success");
+                        onloadfunction();
+                    }
+                });
+            } else {
+                swal("Error!", "Empty task not allowed", "error");
+            }
+        }
+
+        function finish(buttonId) {
+            let finishtask = buttonId.value;
+            if (finishtask != "") {
+                $.ajax({
+                    type: "POST",
+                    url: "finishtask.php",
+                    data: {
+                        finishtask: finishtask
                     },
                     success: function(response) {
                         swal("Good job!", response, "success");
