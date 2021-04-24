@@ -89,6 +89,17 @@
                 }
             });
         });
+
+        function addnew() {
+            $.ajax({
+                type: "GET",
+                url: "add.php",
+                success: function(response) {
+                    $("#content").html(response);
+                    //alert(response);
+                }
+            });
+        }
         //add new task
         function addnewtask() {
             let task_content = $('#newtask').val();
@@ -101,6 +112,7 @@
                     },
                     success: function(response) {
                         swal("Good job!", response, "success");
+                        onloadfunction();
                     }
                 });
             } else {
