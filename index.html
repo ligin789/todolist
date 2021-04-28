@@ -45,7 +45,7 @@
         </div>
 
     </div>
-    <!-- /#wrapper -->
+
 
     <!-- Bootstrap core JavaScript -->
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
@@ -114,7 +114,6 @@
             }
         }
         //delete task
-        //add new task
         function deletetask(buttonId) {
             let delete_task = buttonId.value;
             if (delete_task != "") {
@@ -133,7 +132,7 @@
                 swal("Error!", "Empty task not allowed", "error");
             }
         }
-
+        //finish task
         function finish(buttonId) {
             let finishtask = buttonId.value;
             if (finishtask != "") {
